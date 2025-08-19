@@ -3,7 +3,7 @@ from collections import Counter
 
 print("Bienvenido al Sistema de Encuestas Dinámico\n")
 
-# Lista para almacenar encuestas
+#Lista para almacenar encuestas
 encuestas = []
 
 # Función para crear una encuesta
@@ -246,7 +246,6 @@ def menu():
         print("6. Mostrar estadísticas")
         print("7. Editar encuesta/pregunta")
         print("8. Eliminar encuesta")
-        print("9. Eliminar pregunta")
         print("0. Salir")
 
         opcion = input("Seleccione una opción: ").strip()
