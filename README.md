@@ -1,11 +1,11 @@
-Sistema de Encuestas Dinámico
+## Sistema de Encuestas Dinámico
 
-Descripción del Proyecto
+# Descripción del Proyecto
 Este proyecto consiste en el desarrollo de un sistema de encuestas dinámico en consola, nos va permitir crear encuestas personalizadas, registrar respuestas de los usuarios y mostrar resultados.
 El sistema está diseñado para ser modular, fácil de usar y fuerte ante errores comunes y específicos, utilizando estructuras como funciones, ciclos, condicionales y manejo de excepciones.
 
 
-Objetivo
+# Objetivo
 Desarrollar un sistema que permita:
 - Crear encuestas de manera dinámica.
 - Registrar respuestas de usuarios desde consola.
@@ -14,7 +14,7 @@ Desarrollar un sistema que permita:
 - Versátil con la finalidad de agregar nuevas funcionalidades.
 
 
-Integrantes del Equipo y Roles
+# Integrantes del Equipo y Roles
 
 1. Johann Herrera – Líder técnico
    - Organiza las tareas del equipo y asegura el uso correcto de
@@ -45,7 +45,7 @@ estructuras (ciclos, condicionales, manejo de errores).
    - Colaboradores en la programación de funciones adicionales.  
    - Documentadores de sugerencias de mejora en la bitácora técnica.  
 
-Requisitos Técnicos
+# Requisitos Técnicos
 - Lenguaje: Python 3.13  
 - Git y GitHub: control de versiones, al menos 5 commits por persona.  
 - Uso de:
@@ -77,3 +77,12 @@ El Sistema de Encuestas Dinámico es una aplicación en Python que permite crear
    - Visualizar resultados y estadísticas.
    - Editar o borrar encuestas/preguntas según sea necesario.
 4. Para salir del sistema, seleccionar la opción `0` en el menú principal.
+
+## Vitacora de errores
+| Problema | Solución |
+|----------|----------|
+| Uso de `try-except` para evitar errores al ingresar datos | Implementación de bloques `try-except` en entradas numéricas y de texto. |
+| Conflictos al editar el código en GitHub sin ser el creador | Trabajar en ramas propias y solicitar merge de cambios. |
+| Creación incorrecta de la carpeta `.git` fuera del proyecto | Inicializar Git dentro de la carpeta correcta del proyecto. |
+| Divergencia de ramas y errores al hacer pull/push | Hacer pull o rebase antes de push, resolver conflictos y sincronizar ramas. |
+| Errores de sintaxis olvidados (paréntesis, indentación, comillas, llaves) | Revisar cuidadosamente la sintaxis y corregir los errores antes de ejecutar el código. |
