@@ -150,11 +150,9 @@ def borrar_respuestas():
             print("Entrada inválida. Debe ingresar un número.")
     else:
         print("Opción no válida.")
-
-
-
+        
 # funcion que muestra  estadisticas
-def mostrar_resultados():
+def mostrar_estadisticas():
     if len(encuestas) == 0:
         print("No existen encuestas registradas")
     else:
@@ -175,7 +173,7 @@ def mostrar_resultados():
                             for usuario, respuesta in r.items():
                                 print(f"      {k}. Usuario: {usuario} - Respuesta: {respuesta}")
                                 todas_respuestas.append(respuesta.lower().strip())
-
+                                
                         # Estadísticas automáticas
                         print("Estadísticas:")
                         conteo = Counter(todas_respuestas)
@@ -188,3 +186,36 @@ def mostrar_resultados():
             else:
                 print("No existen preguntas registradas en esta encuesta")
                 print("-"*30)
+
+#Funcion para editar encuestas o preguntas
+def editar_encuesta():
+    encuesta = seleccionar_encuesta()
+    if not encuesta:
+        return
+
+    print("1. Editar nombre de la encuesta\n2. Editar una pregunta")
+    opcion = input("Seleccione una opción: \n").strip()
+
+    if opcion == "1":
+        nuevo_nombre = input("Ingrese el nuevo nombre de la encuesta: \n").strip()
+        encuesta["nombre"] = nuevo_nombre
+        print("Nombre de la encuesta editado con éxito\n")
+
+    elif opcion == "2":
+        if len(encuesta["preguntas"]) == 0:
+            print("No hay preguntas en esta encuesta.")
+            return
+        for idx, pregunta in enumerate(encuesta["preguntas"], start=1):
+            print(f"{idx}. {pregunta[f'pregunta{idx}']}")
+        try:
+            n = int(input("Seleccione el número de pregunta a editar: ")) - 1
+            if 0 <= n < len(encuesta["preguntas"]):
+                nueva_pregunta = input("Ingrese el nuevo texto de la pregunta: \n")
+                encuesta["preguntas"][n][f"pregunta{n+1}"] = nueva_pregunta
+                print("Pregunta editada con éxito\n")
+            else:
+                print("Número de pregunta inválido.")
+        except ValueError:
+            print("Entrada inválida. Debe ingresar un número.")
+    else:
+        print("Opción no válida.")
