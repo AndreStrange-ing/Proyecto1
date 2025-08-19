@@ -1,7 +1,8 @@
-#Sistema de Encuestas Dinámico
+# Sistema de Encuestas Dinámico Mejorado - Varias encuestas y preguntas
+
 print("Bienvenido al Sistema de Encuestas Dinámico\n")
 
-# Creamos una lista en donde se van a almacenar las encuestas
+# Lista para almacenar encuestas
 encuestas = []
 
 # Función para crear una encuesta
@@ -13,19 +14,21 @@ def crear_encuesta():
     }
 
     i = 1
-    #Creamos un bucle para ir agregando las preguntas
     while True:
-        pregunta = input("Ingrese la pregunta (o escriba 'fin' para terminar): \n")
+        pregunta = input(f"Ingrese la pregunta {i} (o escriba 'fin' para terminar): \n")
         if pregunta.lower().strip() == "fin":
+            if len(encuesta["preguntas"]) == 0:
+                print("Debe ingresar al menos una pregunta.")
+                continue
             break
 
-        preguntas = {
+        pregunta_dic = {
             f"pregunta{i}": pregunta,
-            "respuestas": []  # Aquí se van a guardar las respuestas de los usuarios
+            "respuestas": []  # Guardar respuestas de los usuarios
         }
 
-        encuesta["preguntas"].append(preguntas)
+        encuesta["preguntas"].append(pregunta_dic)
         i += 1
 
     encuestas.append(encuesta)
-    print("Encuesta creada con éxito")
+    print(f"Encuesta '{nombre}' creada con éxito\n")
