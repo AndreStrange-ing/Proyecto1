@@ -120,3 +120,4 @@ def buscar_encuesta():
 
         if not encontrada:
             print("No se encontró ninguna encuesta con ese nombre.")
+
