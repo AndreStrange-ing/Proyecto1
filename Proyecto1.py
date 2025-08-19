@@ -1,4 +1,5 @@
 # Sistema de Encuestas Dinámico Mejorado - Varias encuestas y preguntas
+from collections import Counter
 
 print("Bienvenido al Sistema de Encuestas Dinámico\n")
 
@@ -149,3 +150,41 @@ def borrar_respuestas():
             print("Entrada inválida. Debe ingresar un número.")
     else:
         print("Opción no válida.")
+
+
+
+# funcion que muestra  estadisticas
+def mostrar_resultados():
+    if len(encuestas) == 0:
+        print("No existen encuestas registradas")
+    else:
+        print("Encuestas: \n")
+        for i, encuesta in enumerate(encuestas, start=1):
+            print(f"{i}. {encuesta['nombre']}\n")
+
+            if len(encuesta["preguntas"])>0:
+                print("Preguntas: \n")
+
+                for j, pregunta in enumerate(encuesta["preguntas"], start=1):
+                    texto_pregunta = pregunta[f"pregunta{j}"]
+                    print(f"   {j}. {texto_pregunta}\n   Respuestas:")
+
+                    if len(pregunta["respuestas"]) > 0:
+                        todas_respuestas = []
+                        for k, r in enumerate(pregunta["respuestas"], start=1):
+                            for usuario, respuesta in r.items():
+                                print(f"      {k}. Usuario: {usuario} - Respuesta: {respuesta}")
+                                todas_respuestas.append(respuesta.lower().strip())
+
+                        # Estadísticas automáticas
+                        print("Estadísticas:")
+                        conteo = Counter(todas_respuestas)
+                        total = sum(conteo.values())
+                        for resp, cantidad in conteo.items():
+                            porcentaje = (cantidad / total) * 100
+                            print(f"      - {resp}: {cantidad} respuestas ({porcentaje:.1f}%)")
+                    else:
+                        print(f"No existen respuestas registradas para esta pregunta")
+            else:
+                print("No existen preguntas registradas en esta encuesta")
+                print("-"*30)
