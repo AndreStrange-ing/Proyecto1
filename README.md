@@ -54,8 +54,6 @@ estructuras (ciclos, condicionales, manejo de errores).
   - Manejo de excepciones.  
   - Documentación técnica y de usuario.
 
-# Sistema de Encuestas Dinámico
-
 ## Instrucciones de uso
 1. Ejecutar el archivo `Proyecto1.py` en Python 3.x.
 2. Al iniciar, se mostrará el menú principal con las siguientes opciones:
