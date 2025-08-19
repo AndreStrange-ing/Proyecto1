@@ -150,7 +150,7 @@ def borrar_respuestas():
             print("Entrada inválida. Debe ingresar un número.")
     else:
         print("Opción no válida.")
-
+        
 # funcion que muestra  estadisticas
 def mostrar_estadisticas():
     if len(encuestas) == 0:
@@ -173,7 +173,7 @@ def mostrar_estadisticas():
                             for usuario, respuesta in r.items():
                                 print(f"      {k}. Usuario: {usuario} - Respuesta: {respuesta}")
                                 todas_respuestas.append(respuesta.lower().strip())
-
+                                
                         # Estadísticas automáticas
                         print("Estadísticas:")
                         conteo = Counter(todas_respuestas)
