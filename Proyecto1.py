@@ -219,3 +219,17 @@ def editar_encuesta():
             print("Entrada inválida. Debe ingresar un número.")
     else:
         print("Opción no válida.")
+
+#Funcion para eliminar encuestas
+def eliminar_encuesta():
+    if not listar_encuestas():
+        return
+    try:
+        seleccion = int(input("Seleccione el número de encuesta a eliminar: ")) - 1
+        if 0 <= seleccion < len(encuestas):
+            eliminada = encuestas.pop(seleccion)
+            print(f"Encuesta '{eliminada['nombre']}' eliminada con éxito")
+        else:
+            print("Número inválido.")
+    except ValueError:
+        print("Entrada inválida. Debe ingresar un número.")
