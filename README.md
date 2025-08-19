@@ -56,9 +56,6 @@ estructuras (ciclos, condicionales, manejo de errores).
 
 # Sistema de Encuestas Dinámico
 
-## Descripción del proyecto
-El Sistema de Encuestas Dinámico es una aplicación en Python que permite crear múltiples encuestas con varias preguntas, registrar respuestas de usuarios, mostrar resultados y estadísticas, buscar encuestas, editar o eliminar preguntas y encuestas completas. Está diseñado para ser interactivo y fácil de usar, incluyendo validaciones para evitar errores al ingresar datos.
-
 ## Instrucciones de uso
 1. Ejecutar el archivo `Proyecto1.py` en Python 3.x.
 2. Al iniciar, se mostrará el menú principal con las siguientes opciones:
