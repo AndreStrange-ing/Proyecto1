@@ -233,3 +233,44 @@ def eliminar_encuesta():
             print("Número inválido.")
     except ValueError:
         print("Entrada inválida. Debe ingresar un número.")
+
+#Menu
+def menu():
+    while True:
+        print("--- MENÚ PRINCIPAL ---")
+        print("1. Crear encuesta")
+        print("2. Registrar respuestas")
+        print("3. Mostrar resultados")
+        print("4. Buscar encuesta")
+        print("5. Borrar respuestas")
+        print("6. Mostrar estadísticas")
+        print("7. Editar encuesta/pregunta")
+        print("8. Eliminar encuesta")
+        print("9. Eliminar pregunta")
+        print("0. Salir")
+
+        opcion = input("Seleccione una opción: ").strip()
+
+        if opcion == "1":
+            crear_encuesta()
+        elif opcion == "2":
+            registrar_respuesta()
+        elif opcion == "3":
+            mostrar_resultados()
+        elif opcion == "4":
+            buscar_encuesta()
+        elif opcion == "5":
+            borrar_respuestas()
+        elif opcion == "6":
+            mostrar_estadisticas()
+        elif opcion == "7":
+            editar_encuesta()
+        elif opcion == "8":
+            eliminar_encuesta()
+        elif opcion == "0":
+            print("Saliendo del sistema...")
+            break
+        else:
+            print("Opción no válida.")
+
+menu()
