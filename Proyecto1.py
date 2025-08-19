@@ -68,3 +68,25 @@ def registrar_respuesta():
         pregunta["respuestas"].append({usuario: respuesta})
 
     print("Respuestas registradas correctamente\n")
+    
+# Función para mostrar resultados
+def mostrar_resultados():
+    encuesta = seleccionar_encuesta()
+    if not encuesta:
+        return
+
+    if len(encuesta["preguntas"]) == 0:
+        print("No hay preguntas en esta encuesta")
+        return
+
+    print(f"\nResultados de la encuesta '{encuesta['nombre']}':\n")
+    for numero_encuesta, pregunta in enumerate(encuesta["preguntas"], start=1):
+        texto_pregunta = pregunta[f"pregunta{numero_encuesta}"]
+        print(f"{numero_encuesta}. {texto_pregunta}")
+        if len(pregunta["respuestas"]) > 0:
+            for k, r in enumerate(pregunta["respuestas"], start=1):
+                for usuario, respuesta in r.items():
+                    print(f"   {k}. Usuario: {usuario} - Respuesta: {respuesta}")
+        else:
+            print("   No existen respuestas registradas para esta pregunta")
+        print("-" * 30) # separador para dividir bien las encuestas
