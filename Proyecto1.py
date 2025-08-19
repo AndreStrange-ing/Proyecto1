@@ -44,10 +44,20 @@ def listar_encuestas():
         print(f"{i}. {encuesta['nombre']}")
     return True
 
-
-
-
-
+# Función para seleccionar encuesta
+def seleccionar_encuesta():
+    if not listar_encuestas():
+        return None
+    try:
+        seleccion = int(input("Seleccione la encuesta (número): ")) - 1
+        if 0 <= seleccion < len(encuestas):
+            return encuestas[seleccion]
+        else:
+            print("Número de encuesta inválido.")
+            return None
+    except ValueError:
+        print("Entrada inválida. Debe ingresar un número.")
+        return None
 
 # Función para registrar respuestas
 def registrar_respuesta():
@@ -110,3 +120,4 @@ def buscar_encuesta():
 
         if not encontrada:
             print("No se encontró ninguna encuesta con ese nombre.")
+
