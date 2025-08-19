@@ -43,3 +43,28 @@ def listar_encuestas():
     for i, encuesta in enumerate(encuestas, start=1):
         print(f"{i}. {encuesta['nombre']}")
     return True
+
+
+
+
+
+
+# Función para registrar respuestas
+def registrar_respuesta():
+    encuesta = seleccionar_encuesta()
+    if not encuesta:
+        return
+
+    usuario = input("Ingrese su nombre: \n")
+
+    if len(encuesta["preguntas"]) == 0:
+        print("No hay preguntas en esta encuesta")
+        return
+
+    for idx, pregunta in enumerate(encuesta["preguntas"], start=1):
+        texto_pregunta = pregunta[f"pregunta{idx}"]
+        print(f"{idx}. {texto_pregunta}")
+        respuesta = input("Ingrese su respuesta: \n")
+        pregunta["respuestas"].append({usuario: respuesta})
+
+    print("Respuestas registradas correctamente\n")
