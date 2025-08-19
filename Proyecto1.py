@@ -90,7 +90,7 @@ def mostrar_resultados():
         else:
             print("   No existen respuestas registradas para esta pregunta")
         print("-" * 30) # separador para dividir bien las encuestas
-        
+
 #Función buscar encuesta
 def buscar_encuesta():
     if len(encuestas) == 0:
@@ -102,3 +102,11 @@ def buscar_encuesta():
         for i, encuesta in enumerate(encuestas, start=1):
             if encuesta["nombre"].lower() == nombre_buscar:
                 print(f"\nEncuesta encontrada: {encuesta['nombre']}")
+                print("Preguntas:")
+                for j, pregunta in enumerate(encuesta["preguntas"], start=1):
+                    print(f"{i}. {pregunta[f'pregunta{j}']}")
+                encontrada = True
+                break
+
+        if not encontrada:
+            print("No se encontró ninguna encuesta con ese nombre.")
