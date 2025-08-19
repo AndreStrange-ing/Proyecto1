@@ -121,3 +121,31 @@ def buscar_encuesta():
         if not encontrada:
             print("No se encontró ninguna encuesta con ese nombre.")
 
+#funcion la cual borrar las respuestas de las preguntas
+def borrar_respuestas():
+    encuesta = seleccionar_encuesta()
+    if not encuesta:
+        return
+    
+    print("\n1. Borrar todas las respuestas de la encuesta\n2. Borrar respuestas de una pregunta específica")
+    opcion = input("Seleccione una opción: \n").strip()
+    
+    if opcion == "1":
+        for pregunta in encuesta["preguntas"]:
+            pregunta["respuestas"] = []
+        print("Todas las respuestas de la encuesta han sido eliminadas\n")
+    
+    elif opcion == "2":
+        for idx, pregunta in enumerate(encuesta["preguntas"], start=1):
+            print(f"{idx}. {pregunta[f'pregunta{idx}']}")
+        try:
+            n = int(input("Seleccione el número de pregunta: ")) - 1
+            if 0 <= n < len(encuesta["preguntas"]):
+                encuesta["preguntas"][n]["respuestas"] = []
+                print("Respuestas de la pregunta eliminadas\n")
+            else:
+                print("Número de pregunta inválido.")
+        except ValueError:
+            print("Entrada inválida. Debe ingresar un número.")
+    else:
+        print("Opción no válida.")
