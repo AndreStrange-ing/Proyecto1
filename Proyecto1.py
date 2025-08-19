@@ -32,3 +32,14 @@ def crear_encuesta():
 
     encuestas.append(encuesta)
     print(f"Encuesta '{nombre}' creada con éxito\n")
+
+# Función para listar encuestas
+def listar_encuestas():
+    if len(encuestas) == 0:
+        print("No hay encuestas disponibles.")
+        return False
+
+    print("\nEncuestas disponibles:")
+    for i, encuesta in enumerate(encuestas, start=1):
+        print(f"{i}. {encuesta['nombre']}")
+    return True
