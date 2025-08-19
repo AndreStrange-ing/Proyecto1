@@ -29,3 +29,5 @@ def crear_encuesta():
 
     encuestas.append(encuesta)
     print("Encuesta creada con éxito")
+
+print("Hola mundo")
