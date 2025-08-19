@@ -25,12 +25,12 @@ estructuras (ciclos, condicionales, manejo de errores).
    - Responsable del funcionamiento general del código.  
  
 
-2. Juan Pedro Gonzales – Responsable de pruebas y manejo de errores**  
+2. Juan Pablo Sánchez Santiagos – Responsable de pruebas y manejo de errores**  
    - Diseña pruebas para validar el sistema en distintos escenarios (entradas válidas, erróneas, vacías).  
    - Implementa y documenta excepciones en el código.  
    - Escribe un reporte de pruebas y resultados obtenidos.  
 
-3. Juan Pablo Sanchez / Alexis Lopez  – Encargado de interfaz de usuario y flujo
+3. Alexis Lopez  – Encargado de interfaz de usuario y flujo
    - Diseña menús y navegación del programa.  
    - Garantiza una experiencia clara para el usuario en cada paso.  
    - Documenta el flujo del sistema (diagrama o pseudocódigo comentado).  
